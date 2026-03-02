@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musterlösung: Registrierung</title>
+</head>
+<body>
+    <header>
+        <h1>Jetzt für den Erfolg registrieren!</h1>
+    </header>
+
+    <main>
+        <form action="" method="POST">
+            <fieldset>
+                <legend>Persönliche Daten</legend>
+
+                <p>
+                    <label for="username">Name:</label><br>
+                    <input type="text" id="username" name="username" required placeholder="Ihr voller Name">
+                </p>
+
+                <p>
+                    <label for="user-email">E-Mail:</label><br>
+                    <input type="email" id="user-email" name="user-email" required placeholder="mail@beispiel.de">
+                </p>
+
+                <p>
+                    <label for="user-password">Passwort:</label><br>
+                    <input type="password" id="user-password" name="user-password" required minlength="8">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Präferenzen</legend>
+
+                <p>
+                    <label>Geschlecht:</label><br>
+                    <input type="radio" id="gender-m" name="gender" value="m"> <label for="gender-m">Männlich</label><br>
+                    <input type="radio" id="gender-f" name="gender" value="f"> <label for="gender-f">Weiblich</label><br>
+                    <input type="radio" id="gender-o" name="gender" value="o"> <label for="gender-o">Divers</label>
+                </p>
+
+                <p>
+                    <label for="fav-color">Lieblingsfarbe (für Ihr Dashboard):</label><br>
+                    <input type="color" id="fav-color" name="fav-color" value="#339966">
+                </p>
+
+                <p>
+                    <label for="interest">Interessenschwerpunkt:</label><br>
+                    <select id="interest" name="interest">
+                        <option value="java">Java & Backend</option>
+                        <option value="react">React & Frontend</option>
+                        <option value="cloud">Cloud Computing</option>
+                        <option value="money">Nur schnell reich werden</option>
+                    </select>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="newsletter" name="newsletter" checked>
+                    <label for="newsletter">Ja, ich möchte den Newsletter abonnieren.</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <button type="submit">Jetzt kostenlos registrieren</button>
+            </p>
+        </form>
+    </main>
+
+    <footer>
+        <p><a href="../01_html_landing_page/solution_landing_page.html">Zurück zur Landingpage</a></p>
+    </footer>
+</body>
+</html>
