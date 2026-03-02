@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Musterlösung: Box-Modell</title>
+    <style>
+        /* Globaler Reset auf border-box (Best Practice) */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            border: 2px dashed #ccc;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .box {
+            background-color: gold;
+            width: 200px;
+            height: 100px;
+
+            /* Box-Modell Werte */
+            padding: 20px;
+            margin: 20px;
+            border: 10px solid blue;
+
+            /* Lösung für Aufgabe 4: Nebeneinander stehen */
+            display: inline-block;
+            vertical-align: top;
+
+            /* Text-Styling */
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .box-left-border {
+            border-left: 15px solid red; /* Lösung für Bonus: Nur eine Seite */
+        }
+
+        .explanation {
+            margin-top: 30px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Box-Modell Experiment</h1>
+
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box box-left-border">Box 2 (mit rotem Rand links)</div>
+    </div>
+
+    <div class="explanation">
+        <h2>Erklärungen zur Lösung</h2>
+        <ul>
+            <li><strong>margin:</strong> Erzeugt Außenabstand zwischen den Boxen. Bei <code>display: inline-block</code> addieren sich die seitlichen Margins (20px + 20px = 40px Abstand).</li>
+            <li><strong>padding:</strong> Erzeugt Innenabstand zwischen dem Text "Box 1" und dem blauen Rahmen.</li>
+            <li><strong>box-sizing: border-box:</strong> Sorgt dafür, dass die Box trotz Padding und Border exakt 200px breit bleibt. Ohne dieses Attribut (Standard <code>content-box</code>) wäre die Box 200 + 40 (Padding) + 20 (Border) = 260px breit.</li>
+            <li><strong>display: inline-block:</strong> Ermöglicht es, dass Boxen nebeneinander stehen (wie <code>inline</code>), aber dennoch Breite, Höhe und vertikale Abstände akzeptieren (wie <code>block</code>).</li>
+        </ul>
+    </div>
+</body>
+</html>

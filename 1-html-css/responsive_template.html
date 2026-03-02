@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Template</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        /* --- MOBILE-FIRST Ansatz (Basis-Styles) --- */
+        .card-container {
+            display: flex;
+            flex-direction: column; /* Spalte untereinander auf dem Handy */
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* --- MEDIA QUERIES --- */
+
+        /* TABLET / LARGE MOBILE (z.B. ab 600px) */
+        @media (min-width: 600px) {
+            .card-container {
+                flex-direction: row; /* Wechsel zu Zeile */
+                flex-wrap: wrap;
+            }
+            .card {
+                /*flex: 1 1 calc(50% - 20px); !* 2 Karten nebeneinander *!*/
+            }
+            body { background-color: #1182ec; }
+        }
+
+        /* DESKTOP (z.B. ab 1024px) */
+        @media (min-width: 1024px) {
+            .card {
+                flex: 1; /* 3+ Karten gleichmäßig nebeneinander */
+            }
+            body { background-color: #08e108; }
+        }
+
+        /* INFO-TEXT */
+        .info {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Design Template</h1>
+
+    <div class="info">
+        Ändern Sie die Fenstergröße, um das Layout zu testen!<br>
+        Hintergrundfarbe ändert sich: Weiß (Mobil) &rarr; Blau (Tablet) &rarr; Grün (Desktop)
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Mobil zuerst</h3>
+            <p>Basis-Design für Smartphones schreiben, ohne Media Queries.</p>
+        </div>
+        <div class="card">
+            <h3>Breakpoints</h3>
+            <p>Mit <code>@media</code> das Design für größere Bildschirme anpassen.</p>
+        </div>
+        <div class="card">
+            <h3>Flexibilität</h3>
+            <p>Einheiten wie %, vh/vw oder fr (Grid) helfen dabei, flexibel zu bleiben.</p>
+        </div>
+    </div>
+
+</body>
+</html>
