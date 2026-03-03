@@ -23,11 +23,13 @@ Entwicklung einer App (z. B. To-Do-Liste) mit React & TypeScript.
 - **Praxisbeispiel**: Erstellen Sie eine Landingpage mit einem Call-to-Action-Button. Nutzen Sie CSS-Animationen (z. B. `transition`) für interaktive Effekte.
 - **Übungen**: Erstellen Sie eine Tabelle mit CSS-Layout, experimentieren Sie mit Farbpaletten und Schriftarten.
 
-### Tag 2: JavaScript-Grundlagen & DOM-Manipulation
-- **JavaScript-Syntax**: Lernen Sie Variablen (`let`, `const`), Datentypen (Strings, Arrays, Objekte), Bedingungen (`if/else`) und Schleifen (`for`).
-- **DOM-Interaktion**: Nutzen Sie JavaScript, um HTML-Elemente zu manipulieren (z. B. `document.querySelector`, `addEventListener`). Beispiel: Ein dynamisches Menü, das bei Klick öffnet/schließt.
-- **Praxisbeispiel**: Erstellen Sie eine einfache Taschenrechner-App mit Eingabefeldern und einem Ergebnisbereich.
-- **Übungen**: Schreiben Sie eine Funktion, die ein Array sortiert. Experimentieren Sie mit `setTimeout` und `setInterval`.
+**Tag 2: JavaScript-Grundlagen & DOM-Manipulation**
+- **JavaScript-Syntax & Datenstrukturen**: Variablen (`let`, `const`), dynamische Typisierung (`===`), Objekt-Literale und Arrays inkl. Methoden (`push`, `map`, `filter`).
+- **DOM-Interaktion**: Nutzen Sie JavaScript, um HTML-Elemente zu selektieren und zu manipulieren (z. B. `querySelector`, `textContent`, `classList`).
+- **Events & Interaktivität**: Reaktion auf Benutzeraktionen (z. B. `click`, `keyup`, `submit`). Erstellung eines dynamischen Menüs.
+- **Asynchrones JavaScript**: Einführung in Callbacks, Promises und `async/await`. Umgang mit `setTimeout` und API-Aufrufen (`fetch`).
+- **Praxisbeispiel**: Erstellen Sie eine funktionale Taschenrechner-App. Nutzen Sie Event-Handling und die DOM-API für Eingaben und Berechnungen.
+- **Übungen**: Arbeiten mit Arrays und Objekten, DOM-Manipulation in Echtzeit (Uhrzeit, To-Do-Liste) und asynchrone Datenabfragen.
 
 ### Tag 3: TypeScript & Projekt-Setup
 - **TypeScript-Grundlagen**: Erweitern Sie JavaScript mit Typen (`string`, `number`), Interfaces und Enums. Beispiel: Ein Interface für ein Benutzer-Objekt.
