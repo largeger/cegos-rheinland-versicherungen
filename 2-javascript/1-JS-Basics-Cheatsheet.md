@@ -3,6 +3,8 @@ tags:
   - Javascript
   - mini-training
 ---
+# Javascript Basics
+
 ### 1. **Datentypen**
 
 | Typ          | Beschreibung                          |
