@@ -1,0 +1,99 @@
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>JS Basics</title>
+    <style>
+        .expensive {
+            color: green;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+    <script type="module">
+        // 1- Better navigation through the DOM tree with css selectors
+        let output = document.querySelector("#output");
+        output.innerHTML = "<h1> huhu </h1>";
+
+        function print(toPrint) {
+            // Teach querySelector - use css to select elements
+            // Teach innerHtml - like textContent but evalutes to html
+            document.querySelector("#output").innerHTML += toPrint + "<br>";
+            // Also as debug to inspect in console
+            console.log(toPrint);
+        }
+
+        function clear() {
+            document.getElementById("output").innerHTML = "";
+            console.clear();
+        }
+
+
+        // ⚒️ Introduce const keyword
+        const listElements = document.querySelectorAll("li");
+
+        // Introduce for-loop
+        for (let i = 0; i < listElements.length; i++) {
+            // If you get lost what type you are working with
+            print(listElements[i].constructor.name);
+
+            // Tag name
+            print(listElements[i].tagName);
+        }
+
+        clear();
+
+        //  🛠️ Introduce a for-each loop
+        for (const child of listElements) {
+            print(child.tagName);
+        }
+
+        clear();
+
+        //  🛠️ Introduce `if` condition by filter out some element
+        for (const child of listElements) {
+            if (child.textContent == "Quartz") {
+                print("Quartz found!");
+            } else {
+                print("No Quartz :(");
+            }
+        }
+        clear();
+
+        // ⚒️ Introduce a counter (can also be an exercise)
+        let counter = 0;
+        for (const child of listElements) {
+            if (child.textContent == "Quartz") {
+                counter++;
+            }
+        }
+        print(counter + " Quartz found!");
+
+        clear();
+
+        //  ⚒️ Checking for class `.expensive` and print out only expensive items
+        for (const listItem of listElements) {
+            // Find out type first
+            print(listItem.classList);
+            print(listItem.classList.constructor.name);
+
+            if (listItem.classList.contains("expensive")) {
+                print("Expensive Item: " + listItem.textContent);
+            }
+        }
+
+        clear();
+    </script>
+
+</head>
+<body>
+<h1>Minerals collection</h1>
+<h2>Collected over 20 years</h2>
+<ul>
+    <li class='expensive'>Diamond</li>
+    <li>Quartz</li>
+    <li class='expensive'>Palladium</li>
+    <li>Tourmaline</li>
+</ul>
+<code id="output"></code>
+</body>
+</html>

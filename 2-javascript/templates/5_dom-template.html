@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1 id="title">DOM Manipulation Example</h1>
+<p class="thomas">This is a simple example demonstrating DOM manipulation techniques.</p>
+
+<button id="changeContent">Change Content</button>
+<button id="addElement">Add Element</button>
+<button id="removeElement">Remove Last Element</button>
+
+<div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+</div>
+
+<ul id="itemList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<script>
+    // 1. Accessing Elements
+    const title = document.getElementById("title");
+    const description = document.getElementsByClassName("thomas")[0];
+    const description2 = document.querySelector(".thomas");
+    const boxes = document.getElementsByClassName("box");
+    const boxes2 = document.querySelectorAll(".box");
+    //console.log(title);
+
+    // 2. Modifying Content
+    const changeContentBtn = document.getElementById("changeContent");
+    // There are some variations in editing the text contents of e.g. the title
+    // title.textContent = "<del>Thomas \n was \n here</del>"
+    // title.innerHTML = "<del>Thomas war nochmal da</del>"
+    // title.innerText = "This \n is a \n simple example"
+
+    // first event listener - WITHOUT an arrow function - "Classical way"
+    function bla() {
+        title.innerHTML = "<del>Thomas war nochmal da</del>"
+        alert("Thomas mach buh!")
+    }
+    changeContentBtn.addEventListener("click", bla);
+
+    // event listeners WITH arrow functions
+    changeContentBtn.addEventListener("mouseover", () => {
+        title.classList.add("highlight");
+    });
+    changeContentBtn.addEventListener("mouseout", () => {
+        title.classList.remove("highlight");
+    });
+
+
+    // 3. Adding a New Element
+    const addElementBtn = document.getElementById("addElement");
+    const itemList = document.getElementById("itemList");
+    addElementBtn.addEventListener("click", () => {
+        const newLI = document.createElement("li");
+        const length = document.querySelectorAll("#itemList li").length + 1;
+        newLI.innerHTML = `Item ${length}`;
+        itemList.appendChild(newLI);
+    })
+
+    // 4. Removing an Element
+    const removeElementBtn = document.getElementById("removeElement");
+    removeElementBtn.addEventListener("click", () => {
+        if (itemList.querySelectorAll("li").length >= 1) {
+            const lastLIChild = itemList.lastElementChild
+            console.log(lastLIChild);
+            itemList.removeChild(lastLIChild);
+        } else {
+            description.innerHTML = "Item is empty - sorry... 🤷‍♂️🤷‍"
+        }
+    })
+
+    // 5. Traversing DOM
+
+
+    // 6. DOMContentLoaded
+
+
+    // 7. Window Load Event
+
+</script>
+</body>
+</html>
