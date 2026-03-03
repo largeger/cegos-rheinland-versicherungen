@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .console {
+        flex: 2;
+    }
+
+    #output {
+        height: 300px;
+        background-color: lightgray;
+        display:block;
+        overflow:scroll;
+        padding: 10px;
+    }
+</style>
+<script type="module">
+    function print(toPrint){
+        document.querySelector("#output").innerHTML += toPrint + "<br>";
+        console.log(toPrint);
+    }
+
+    function clear(){
+        document.getElementById("output").textContent = "";
+        console.clear();
+    }
+
+    // Your code goes here!
+    // to print sth use the function print()
+    print("Hello World")
+</script>
+
+
+<body>
+    <div class="console">
+        <h1>Output</h1>
+        <code id="output">
+            Our console output...
+        </code>
+    </div>
+
+</body>
+</html>
