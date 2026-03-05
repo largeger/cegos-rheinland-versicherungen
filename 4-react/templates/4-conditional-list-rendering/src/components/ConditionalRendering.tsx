@@ -1,4 +1,4 @@
-function ConditionalRendering(props) {
+function ConditionalRendering(props: { weatherGood: boolean; }) {
     const wetterIstSchoen = props.weatherGood
 
     // Das ist noch kein Conditional Rendering
