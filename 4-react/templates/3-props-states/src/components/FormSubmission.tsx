@@ -1,15 +1,15 @@
-import {useState} from "react";
+import {type ChangeEvent, type MouseEvent, useState} from "react";
 
-function FormSubmission(props) {
+function FormSubmission(props: { setGreeting: (greeting: string) => void; }) {
     const [inputValue, setInputValue] = useState('Init');
 
-    function handleSubmit(event : Event) {
+    function handleSubmit(event : MouseEvent<HTMLButtonElement> ) {
         event.preventDefault(); // sagt dem Browser: bitte nix machen, ich kümmer mich selbst um das Event
         props.setGreeting(inputValue);
         setInputValue('');
     }
 
-    function handleInputChange(event : Event) {
+    function handleInputChange(event : ChangeEvent<HTMLInputElement>) {
         setInputValue(event.target.value);
     }
 
