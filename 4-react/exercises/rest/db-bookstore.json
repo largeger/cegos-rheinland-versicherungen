@@ -1,0 +1,52 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "description": "A novel about the American dream in the 1920s.",
+      "price": 10.99
+    },
+    {
+      "id": "2",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "description": "A story about racial injustice in the Deep South.",
+      "price": 12.5
+    },
+    {
+      "id": "3",
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "description": "A novel about a totalitarian future society.",
+      "price": 9.99
+    },
+    {
+      "id": "4",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Dystopian",
+      "description": "A novel about a utopian society gone wrong.",
+      "price": 11.25
+    },
+    {
+      "id": "5",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Classic",
+      "description": "A story about teenage angst and alienation.",
+      "price": 8.75
+    },
+    {
+      "id": "6",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "description": "A novel about the American dream in the 1920s.",
+      "price": 10.99
+    }
+  ]
+}
