@@ -2,19 +2,19 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 
-interface Post {
-    userId: number;
+interface Book {
     id: number;
+    author: string;
     title: string;
-    body: string;
+    description: string;
 }
 
-function GetJsonPlaceholder() {
-    const [data, setData] = useState<Post[]>([])
+function GetBookstore(props) {
+    const [data, setData] = useState<Book[]>([])
 
     async function fetchData() {
         try {
-            const response = await axios.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
+            const response = await axios.get<Book[]>("http://localhost:3001/books");
             setData(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -23,18 +23,18 @@ function GetJsonPlaceholder() {
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, [props.data])
 
     return (
         <div>
-            <h2>API Data from JSONPlaceholder (Posts)</h2>
+            <h2>API Data from localhost Bookstore</h2>
             <ul>
                 {
-                    data.map(post => (<li key={post.id}>{post.title}</li>))
+                    data.map(book => (<li key={book.id}>{book.title}</li>))
                 }
             </ul>
         </div>
     );
 }
 
-export default GetJsonPlaceholder;
+export default GetBookstore;

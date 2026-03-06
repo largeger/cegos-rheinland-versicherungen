@@ -1,4 +1,4 @@
-import {type FormEvent, useState} from "react";
+import {type ChangeEvent, useState} from "react";
 import axios from "axios";
 
 function PostJsonPlaceholder() {
@@ -9,12 +9,12 @@ function PostJsonPlaceholder() {
     const [responseData, setResponseData] = useState(dummyobject);
     const [postData, setPostData] = useState(dummyobject);
 
-    function handleInputChange(event) {
+    function handleInputChange(event : ChangeEvent<HTMLInputElement>)  {
         const {name, value} = event.target;
         setPostData({...postData, [name]: value});  // spread operator um das postdata-objekt mit einem neuen key-value Paar zu ergänzen / zu überschreiben
     }
 
-    async function handleSubmit(event) {
+    async function handleSubmit(event : SubmitEvent) {
         event.preventDefault()
         const response = await axios.post("https://jsonplaceholder.typicode.com/posts", postData)
         setResponseData(response.data);
